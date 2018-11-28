@@ -21,7 +21,7 @@ public interface FyleMapper {
 	 * @param ifsc
 	 * @return {@link Bank}
 	 */
-	@Select("SELECT * FROM `bank_db`.`bank` WHERE ifsc=#{ifsc}")
+	@Select("SELECT * FROM `bank` WHERE ifsc=#{ifsc}")
 	Bank getBankByIfsc(String ifsc);
 	
 	/**
@@ -30,7 +30,7 @@ public interface FyleMapper {
 	 * @param city
 	 * @return {@link List}
 	 */
-	@Select("SELECT * FROM `bank_db`.`bank` WHERE name=#{name} and city=#{city}")
+	@Select("SELECT * FROM `bank` WHERE name=#{name} and city=#{city}")
 	List<Bank> getBankByNameAndCity(@Param(ServiceConstants.NAME) String name, @Param(ServiceConstants.CITY) String city);
 
 }
